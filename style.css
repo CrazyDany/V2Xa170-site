@@ -1,0 +1,305 @@
+:root {
+    --bg-dark: #23272F;
+    --bg-light: #283541;
+    --bg-lighter: #3A4455;
+    --text-main: #FFFFFF;
+    --text-secondary: #939BAD;
+    --text-muted: #808798;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+#nav-bar {
+    background-color: var(--bg-dark);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--box-shadow);
+}
+
+#nav-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#title {
+    color: var(--text-main);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#title::after {
+    content: "a170";
+    color: var(--text-muted);
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+#nav-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-button {
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.nav-button:hover {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+}
+
+#mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Sections */
+.content-section {
+    padding: 60px 0;
+}
+
+.content-section h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.content-section h1::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: var(--text-muted);
+    margin: 15px auto;
+}
+
+/* About section */
+.description-box {
+    background-color: var(--bg-light);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.description {
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Team section */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.team-card {
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+.team-photo {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--text-muted);
+}
+
+.team-info {
+    flex: 1;
+}
+
+.team-name {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: var(--text-main);
+}
+
+.team-position {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.team-description {
+    color: var(--text-secondary);
+    font-size: 15px;
+}
+
+/* Project section */
+.video-slider {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--box-shadow);
+}
+
+.video-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.video-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.video-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--text-main);
+}
+
+.video-description {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.video-controls {
+    display: flex;
+    gap: 15px;
+}
+
+.control-btn {
+    background-color: var(--bg-lighter);
+    color: var(--text-main);
+    border: none;
+    padding: 8px 16px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: "Inter", sans-serif;
+}
+
+.control-btn:hover {
+    background-color: var(--text-muted);
+}
+
+.video-placeholder {
+    background-color: var(--bg-lighter);
+    border-radius: var(--border-radius);
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+}
+
+/* Footer */
+footer {
+    background-color: var(--bg-light);
+    padding: 20px 0;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #nav-buttons {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-dark);
+        padding: 20px;
+        box-shadow: var(--box-shadow);
+    }
+
+    #nav-buttons.active {
+        display: flex;
+    }
+
+    #mobile-menu-btn {
+        display: block;
+    }
+
+    .content-section {
+        padding: 40px 0;
+    }
+
+    .content-section h1 {
+        font-size: 28px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .video-slider {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .content-section h1 {
+        font-size: 24px;
+    }
+
+    .team-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .video-info, .video-container {
+        min-width: 100%;
+    }
+}
